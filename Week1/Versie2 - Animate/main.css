@@ -1,0 +1,137 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+header {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    font-size: 1.3rem;
+    color: #53595c;
+    font-weight: 700;
+    background: #eeeeee;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+header h1 {
+    grid-column-start: 2;
+    align-self: center;
+}
+header h3 {
+    grid-column-start: 1;
+    color: #53595c;
+    font-size: 1.3rem;
+    align-self: center;
+    justify-self: start;
+    grid-row-start: 1;
+    padding: 0.5rem;
+}
+header img {
+    height: 3rem;
+    align-self: center;
+    padding: 0.5rem;
+    margin: 0;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: end;
+}
+
+article {
+    width: 99%;
+    min-width: 50%;
+    height: 6.5rem;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, hsla(0,0%,100%,1) 0%,hsla(0,0%,97%,1) 50%,hsla(0,0%,97%,1) 52%,hsla(0,0%,100%,1) 100%);
+    border: 1px solid #dddddd;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 6rem 1fr 3rem;
+    grid-template-rows: 3rem 2rem;
+    justify-content: flex-start;
+    margin: 0.5rem;
+}
+img[src="playbutton.png"] {
+    height: 3rem;
+    position: inherit;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    border: none;
+}
+img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 5rem;
+    border-bottom: 1px solid #dddddd;
+    
+}
+h1 {
+    font-size: 1.4rem;
+    color: #53595c;
+    align-self: start;
+    padding: 0;
+    margin: 0;
+    grid-column-start: 2;
+}
+h2 {
+    font-size: 1rem;
+    color: #53595c;
+    align-self: end;
+    padding: 0;
+    margin: 0;
+    grid-column-start: 2;
+}
+h3 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+    color: #cccccc;
+}
+.dragging {
+    border: 2px solid #79ade8;
+    background: rgba(121, 173, 232, 0.4);
+}
+@keyframes checked {
+    from {border: 1px solid #dddddd;}
+    to {border: 1px solid #b0f6ca;}
+    from {background: none;}
+    to {background: rgba(176,246,20, 0.1) }
+}
+.dragend {
+    background: none;
+    box-sizing: border-box;
+    animation-name: checked;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+div {
+    width: 100%;
+    background: none;
+    height: 6.5rem;
+
+}
+@keyframes backgroundswitch {
+    from {background: none;}
+    to {background-color: rgba(121, 173, 232, 0.4);}
+}
+.droptargetarea {
+    background: none;
+    animation-name: backgroundswitch;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+} 
+.droptargetarea2 {
+    background: none;
+}
+.draggingarea {
+    border: 2px solid #79ade8;
+}
