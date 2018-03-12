@@ -78,7 +78,8 @@ li:nth-child(3){
     background-size: cover;
 }
 li:nth-child(4){
-    background: green;
+     background-image: url('Baby2.jpg');
+    background-size: cover;
 }
 
 .maindot {
