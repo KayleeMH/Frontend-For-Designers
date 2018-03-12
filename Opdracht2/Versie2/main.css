@@ -1,0 +1,105 @@
+html, body {
+    background: linear-gradient(45deg, #ffffff 0%,#f3f3f3 50%,#ffffff 100%);
+    font-family: 'Indie Flower', cursive;
+}
+h1 {
+    align-self: center;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: -2rem;
+}
+.container {
+    position: relative;
+    height: 40rem;
+    padding: 2rem;
+    width: 68rem;
+    max-width: 68rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slides {
+    position: absolute;
+    height: 40rem;
+    opacity: 0;
+    z-index: 1; 
+    padding: 0;
+    margin: 0;
+    
+}
+.mainslide {
+    z-index: 2;
+    opacity: 1;
+    height: 40rem;
+    padding: 0;
+    margin: 0;
+    border: 2px solid grey;
+    border-radius: 10px;
+    
+}
+button {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    color: grey;
+}
+button:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+button:nth-last-child(1){
+    position: absolute;
+    top:50%;
+    right: 0;
+    color: green;
+}
+
+/* HFWJNFWIJKFNWFJW */
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ol {
+    margin: 0;
+    padding: 0;
+}
+li:nth-child(1){
+    background-image: url(BABY.jpeg);
+    background-size: cover;
+}
+li:nth-child(2){
+    background-image: url(babylove.jpg);
+    background-size: cover;
+}
+li:nth-child(3){
+    background-image: url('BABY%20loooooooove%20(2).jpg');
+    background-size: cover;
+}
+li:nth-child(4){
+    background: green;
+}
+
+.maindot {
+    background: white;
+    border-radius: 50%;
+    border: white;
+    height: 0.5rem;
+    padding: 5px 15px;
+    margin-left: 20rem;
+    margin-right: 0.5rem;
+}
+.dotcontainer {
+    position: relative;
+    top: -2rem;
+}
+.transparentdot {
+    background: rgba(255,255,255, 0.5);
+    border: 2px solid white;
+    border-radius: 50%;
+    border: white;
+    height: 0.5rem;
+    padding: 5px 15px;
+    margin: 0.5rem;
+}
