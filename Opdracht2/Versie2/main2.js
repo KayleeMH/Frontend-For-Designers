@@ -47,7 +47,7 @@ var lastslide = function () {
     currentslide.classList.remove('active');
     currentdot.classList.remove('activedot');
     counter = counter - 1;
-    dotcounter = dotcounter -1;
+    dotcounter = dotcounter - 1;
     if (counter <= -1 && dotcounter <= -1) {
         counter = counter + 4;
         dotcounter = dotcounter + 4;
@@ -71,3 +71,15 @@ function slidekey(event) {
 }
 
 document.addEventListener('keydown', slidekey);
+
+var dot1 = document.querySelector('span:first-child');
+var dot2 = document.querySelector('span:nth-child(2)');
+var dot3 = document.querySelector('span:nth-child(3)');
+var dot4 = document.querySelector('span:nth-child(4)');
+
+var klikdots = function () {
+        if (gekliktedot != dotcounter) {
+            currentslide.classList.remove('active');
+            currentdot.classList.remove('activedot');
+        }
+}
