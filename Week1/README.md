@@ -6,4 +6,8 @@ De default is dat je items niet kunt verplaatsen, dus dit moet je eerst uitschak
 
 De drag&drop werkt niet volledig in deze demo, alleen het eerste nummer kan één keer gedropt worden, daarna liep ik vast met het coderen. Het liefst had ik gewild dat alle items in de list verplaatst konden worden met een mooie animatie om de verplaatsing duidelijk te maken, echter is dit niet gelukt. 
 
-Als eerste versie heb ik gekozen voor blokken die naadloos op elkaar aansluiten met neutrale grijstinten zodat elk genre erbij past. Echter tijdens het drag&drop proces, heb ik gekozen voor een blauwe accentkleur, zodat het opviel en de gebruiker kan zien waarmee hij/zij bezig is.
+Als eerste versie heb ik gekozen voor blokken die naadloos op elkaar aansluiten met neutrale grijstinten zodat elk genre erbij past. Echter tijdens het drag&drop proces, heb ik gekozen voor een blauwe accentkleur, zodat het opviel en de gebruiker kan zien waarmee hij/zij bezig is. [Versie1](Versie1-%20Grijs)
+
+Als twee versie heb ik gebruik gemaakt van verschillende animaties, om te kijken hoe ik met behulp van kleur de gebruiker verduidelijking kon bieden. [Versie2](Versie2%20-%20Animate)
+
+Als derde versie heb ik de layout en vormgeving van de eerste gebruikt, en de animatie van de tweede versie toegevoegd. [Versie3](Versie3)
