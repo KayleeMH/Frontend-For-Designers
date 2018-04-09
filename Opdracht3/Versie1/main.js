@@ -72,24 +72,34 @@ var filmtitle = function (jsonObj) {
 
         //functie buttons
         //show button 1
-        /* var infobutton1 = document.querySelector('div:nth-child(1)>button');
+        /*var infobutton1 = document.querySelector('div:nth-child(1)>button');
         var info1 = document.querySelector("article:first-of-type");
         console.log(infobutton1);
         var showinfo = function () {
             info1.classList.add('active');
             console.log('geklikt');
         }
-        infobutton1.addEventListener("click", showinfo); */
-        var alleinfo = document.querySelectorAll('div > button');
+        infobutton1.addEventListener("click", showinfo);
+        //show button 2
+        var infobutton2 = document.querySelector('div:nth-child(3)>button');
+        var info2 = document.querySelector("article:nth-child(4)");
+        console.log(infobutton2);
+        var showinfo = function () {
+            info2.classList.add('active');
+            console.log('geklikt');
+        }
+        infobutton2.addEventListener("click", showinfo); */
+        
+        var infobuttons = document.querySelectorAll('div > button');
         var infoblokken = document.querySelectorAll('article');
         console.log(infoblokken[0]);
         
         var showinfo = function () {
-            for (var ib = 0; ib < alleinfo.length; ib++)
-            if (alleinfo[0]) {
+            for (var ib = 0; ib < infobuttons.length; ib++)
+            if (infobuttons[0]) {
                 infoblokken[0].classList.add('active');
             }
-            else if (alleinfo[1]) {
+            else if (infobuttons[1]) {
                 infoblokken[1].classList.add('active');
             }
 
