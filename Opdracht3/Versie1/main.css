@@ -6,7 +6,10 @@ body {
     padding: 0;
     margin: 0;
 }
-
+header img {
+    height: 5rem;
+    width: 5rem;
+}
 
 .filmblok {
     background: #232323;
