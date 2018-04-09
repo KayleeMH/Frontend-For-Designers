@@ -24,7 +24,7 @@ var filmtitle = function (jsonObj) {
     for (var i = 0; i < allefilms.length; i++) {
         //test om te kijken of ie loopt
         console.log('hi ' + i);
-        //creeeren van alle blokken
+        //DE BLOKKEN WAARIN DE INFO GAAT
         var filmblok = document.createElement('div');
         var infoblok = document.createElement('article');
         filmblok.classList.add("filmblok");
@@ -32,7 +32,7 @@ var filmtitle = function (jsonObj) {
         container.appendChild(filmblok);
         container.appendChild(infoblok);
 
-        //creeeren van de titel van elke film
+        //CREEEREN FILMBLOK
         var myH1 = document.createElement('h1');
         myH1.textContent = jsonObj[i]['title'];
         filmblok.appendChild(myH1);
@@ -49,7 +49,7 @@ var filmtitle = function (jsonObj) {
         simpleplot.textContent = jsonObj[i]['simple_plot'];
         filmblok.appendChild(simpleplot);
 
-        //de informatie blokken
+        //DE VERBORGEN INFOBLOKKEN
         var myH1B = document.createElement('h1');
         myH1B.textContent = jsonObj[i]['title'];
         infoblok.appendChild(myH1B);
@@ -69,41 +69,17 @@ var filmtitle = function (jsonObj) {
         var exitbutton = document.createElement('button');
         infoblok.appendChild(exitbutton);
         exitbutton.innerHTML = 'x';
-
-        //functie buttons
-        //show button 1
-        /*var infobutton1 = document.querySelector('div:nth-child(1)>button');
-        var info1 = document.querySelector("article:first-of-type");
-        console.log(infobutton1);
-        var showinfo = function () {
-            info1.classList.add('active');
-            console.log('geklikt');
-        }
-        infobutton1.addEventListener("click", showinfo);
-        //show button 2
-        var infobutton2 = document.querySelector('div:nth-child(3)>button');
-        var info2 = document.querySelector("article:nth-child(4)");
-        console.log(infobutton2);
-        var showinfo = function () {
-            info2.classList.add('active');
-            console.log('geklikt');
-        }
-        infobutton2.addEventListener("click", showinfo); */
         
-        var infobuttons = document.querySelectorAll('div > button');
-        var infoblokken = document.querySelectorAll('article');
-        console.log(infoblokken[0]);
-        
+        //KLIKFUNCTIE VOOR ZIEN VAN INFO
+        console.log(infoblok);
         var showinfo = function () {
-            for (var ib = 0; ib < infobuttons.length; ib++)
-            if (infobuttons[0]) {
-                infoblokken[0].classList.add('active');
-            }
-            else if (infobuttons[1]) {
-                infoblokken[1].classList.add('active');
-            }
-
+            infoblok.classList.add('active');
+            console.log(infoblok);
+            console.log('de klik werkt');
         }
-        document.addEventListener("click", showinfo);
+
+        infobutton.addEventListener("click", showinfo);
+
     }
 }
+//einde van de mega loop 
