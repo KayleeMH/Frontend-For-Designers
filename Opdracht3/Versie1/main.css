@@ -6,9 +6,35 @@ body {
     padding: 0;
     margin: 0;
 }
+
+header {
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 5rem auto;
+    grid-template-rows: 5rem;
+    background: black;
+    border-bottom: 1px solid white;
+    /* max-width: 380px; */
+}
+
 header img {
+    grid-row-start: 1;
+    grid-column-start: 1;
     height: 5rem;
     width: 5rem;
+    display: grid;
+    padding-left: 0.5rem;
+
+}
+
+header h1 {
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    color: red;
+    font-size: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 2.5rem;
 }
 
 .filmblok {
@@ -16,59 +42,147 @@ header img {
     color: white;
     height: 800px;
     max-height: 800px;
-    max-width: 400px;
+    display: grid;
+    grid-template-columns: auto 3rem;
+    grid-template-rows: auto auto auto;
     z-index: 1;
     transition: all 0.5s ease;
     padding-top: 0.5rem;
+    border-bottom: 1px solid white;
+}
+.filmblok h1 {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 1;    
 }
 
 .infoblok {
-    background: #e7e7e7;
+    background: #f8f8f8;
+    display: grid;
+    grid-template-columns: auto 5rem;
+    grid-template-rows: 4rem 1.5rem 1rem auto;
     min-height: 800px;
-    max-width: 400px;
+    /* max-width: 380px; */
     padding-bottom: 0;
     padding-top: 0.5rem;
-    z-index: -1; 
+    z-index: -1;
     opacity: 0;
     transition: all 0.8s ease;
     margin-top: 0.5rem;
+    border-bottom: 1px solid black;
 
 }
+
+.infoblok button {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    color: black;
+    border: 2px solid black;
+    height: 2.5rem;
+    width: 2.5rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.infoblok p {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+}
+
+.infoblok h1 {
+    display: grid;
+    grid-column-start: 1;
+}
+
+.infoblok h2 {
+    display: grid;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    padding: 0 1rem;
+    margin: 0;
+    font-size: 1rem;
+
+}
+
+.infoblok h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    display: grid;
+    grid-row-start: 3;
+    margin-top: 0;
+}
+
+h4 {
+    display: grid;
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+.infoblok div {
+    display: grid;
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: inline-block;
+    padding: 0 1rem;
+}
+.infoblok div img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0.5rem;
+}
+
 /* de posities van de infoblokken yo */
-article:first-of-type{
+
+article:first-of-type {
     position: absolute;
-    top: 0;
-    left: 0.5rem;
-}
-article:nth-child(4){
-    position: absolute;
-    top: 808px;
-    left: 0.5rem;
-}
-article:nth-child(6){
-    position: absolute;
-    top: 1616px;
-    left: 0.5rem;
-}
-article:nth-child(8){
-    position: absolute;
-    top: 2424px;
-    left: 0.5rem;
-}
-article:nth-child(10){
-    position: absolute;
-    top: 3232px;
-    left: 0.5rem;
-}
-article:nth-child(12){
-    position: absolute;
-    top: 4040px;
+    top: 80px;
     left: 0.5rem;
 }
 
-div:nth-child(3) > button {
-    background: red;
+article:nth-child(4) {
+    display: grid;
+    grid-template-columns: auto 5rem;
+    grid-template-rows: 5.5rem 1.5rem 1rem auto;
+    position: absolute;
+    top: 890px;
+    left: 0.5rem;
 }
+
+article:nth-child(4) h2 {
+    margin-top: -0.1rem;
+}
+
+article:nth-child(6) {
+    position: absolute;
+    top: 1699px;
+    left: 0.5rem;
+}
+
+article:nth-child(8) {
+    position: absolute;
+    top: 2509px;
+    left: 0.5em;
+}
+
+article:nth-child(10) {
+    position: absolute;
+    top: 3319px;
+    left: 0.5rem;
+}
+
+article:nth-child(12) {
+    position: absolute;
+    top: 4129px;
+    left: 0.5rem;
+}
+
 /* other shit */
 
 img {
@@ -76,11 +190,16 @@ img {
     width: 100%;
     border-top: 2px solid #3d3d3d;
     border-bottom: 2px solid #3d3d3d;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
 }
+
 button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    font-weight: bold; 
+    font-weight: bold;
     border-radius: 50%;
     background: none;
     border-radius: 50%;
@@ -89,36 +208,33 @@ button {
 }
 
 .filmblok button {
+    display: grid;
     color: white;
     border: 2px solid white;
     padding: 0.1em 0.6em;
     position: relative;
-    top: 30px;
-    left: 350px;   
+    grid-column-start: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 .filmblok button:hover {
     color: #232323;
     background: white;
 }
-.infoblok button {
-    color: black;
-    border: 2px solid black;
-    position: relative;
-    padding: 2px 0.6em;
-    top: -255px;
-    left: 343px;
-}
 
 p {
-    width: 80%;
     padding: 0 1rem;
     position: relative;
     font-family: 'Open Sans', sans-serif;
 }
 
 .filmblok p {
-    top: -30px;
+    display: grid;
+    grid-column-start: 1;
+    grid-row-start: 3;
 }
 
 h1 {
@@ -132,17 +248,10 @@ h3 {
     padding: 0 1rem;
 }
 
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    margin-top: -1rem;
-}
 
 .active {
     opacity: 1;
     z-index: 2;
-    background: red;
 
 }
 

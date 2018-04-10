@@ -69,17 +69,48 @@ var filmtitle = function (jsonObj) {
         var exitbutton = document.createElement('button');
         infoblok.appendChild(exitbutton);
         exitbutton.innerHTML = 'x';
-        
-        //KLIKFUNCTIE VOOR ZIEN VAN INFO
-        console.log(infoblok);
-        var showinfo = function () {
-            infoblok.classList.add('active');
-            console.log(infoblok);
-            console.log('de klik werkt');
+        //director
+        /*var director = document.createElement('h4');
+        director.textContent = jsonObj[i]['directors'][i]['name'];
+        infoblok.appendChild(director);*/
+        //acteurs
+        var acteurs = jsonObj[i]['actors'];
+        var acteurblok = document.createElement('div');
+        var acteurtitle = document.createElement('h4');
+        acteurtitle.innerHTML = 'Actors'
+        infoblok.appendChild(acteurblok);
+        acteurblok.appendChild(acteurtitle);
+        for (var ib = 0; ib < acteurs.length; ib++) {
+            var acteurfoto = document.createElement('img');
+            acteurfoto.src = jsonObj[i]['actors'][ib]['url_photo'];
+            acteurblok.appendChild(acteurfoto);
+
         }
 
-        infobutton.addEventListener("click", showinfo);
+        //KLIKFUNCTIE VOOR ZIEN VAN INFO
+        infobutton.info = infoblok;
+        infobutton.addEventListener("click", function () {
+            this.info.classList.add('active');
+        });
+
+        //KLIKFUNCTIE VOOR EXIT VAN INFO
+        exitbutton.exit = infoblok;
+        var exit = function () {
+            this.exit.classList.remove('active')
+        };
+        exitbutton.addEventListener("click", exit);
+        
+        function escExit(event) {
+            var checkkey = event.keyCode;
+            if (checkkey == 27) {
+                console.log('esc pressed')
+                
+            }
+        }
+        document.addEventListener('keydown', escExit);
 
     }
+
 }
-//einde van de mega loop 
+//einde van de mega loop
+//einde functie filmtitle
