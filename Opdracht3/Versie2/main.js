@@ -78,53 +78,18 @@ var filmtitle = function (jsonObj) {
         //acteurs
         var acteurs = jsonObj[i]['actors'];
         var acteurblok = document.createElement('div');
-        acteurblok.classList.add('actorContainer');
-        /*var acteurbtn = document.createElement('button');
+        acteurblok.classList.add('actors')
+        var acteurbtn = document.createElement('button');
         acteurbtn.innerHTML = 'Show actors'
         acteurbtn.classList.add('actorsbtn');
-        infoblok.appendChild(acteurbtn);*/
+        infoblok.appendChild(acteurbtn);
         infoblok.appendChild(acteurblok);
         for (var ib = 0; ib < acteurs.length; ib++) {
-            var singleactor = document.createElement('div');
-            singleactor.classList.add('actorblock');
-            acteurblok.appendChild(singleactor);
-            //img actor
             var acteurfoto = document.createElement('img');
             acteurfoto.src = jsonObj[i]['actors'][ib]['url_photo'];
-            singleactor.appendChild(acteurfoto);
-            //actor naam
-            var acteurnaam = document.createElement('h5');
-            acteurnaam.textContent = jsonObj[i]['actors'][ib]['actor_name'];
-            singleactor.appendChild(acteurnaam);
-            //actor role
-            var acteurrole = document.createElement('h6');
-            acteurrole.textContent = "as " + jsonObj[i]['actors'][ib]['character'];
-            singleactor.appendChild(acteurrole);
+            acteurblok.appendChild(acteurfoto);
 
         }
-        //creeer buttons
-        var nextbtn = document.createElement('button');
-        nextbtn.innerHTML = '>';
-        acteurblok.appendChild(nextbtn);
-        
-        //SLIDER VOOR ACTORS 
-        var counter = 0;
-        var alleactors = acteurs.length;
-        var currentactor = alleactors[0];
-        console.log(alleactors);
-
-        console.log(alleactors);
-        var nextactor = function () {
-            currentactor.classList.remove('activeAct');
-            counter = counter + 1;
-            if (counter >= alleactors) {
-                counter = 0;
-            }
-            currentactor = alleactors[counter];
-            currentactor.classList.add('activeAct');
-            console.log(counter);
-        }
-        nextbtn.addEventListener("click", nextactor);
 
         //KLIKFUNCTIE VOOR ZIEN VAN INFO
         infobutton.info = infoblok;
@@ -137,19 +102,28 @@ var filmtitle = function (jsonObj) {
         var exit = function () {
             this.exit.classList.remove('active');
         };
+        
         exitbutton.addEventListener("click", exit);
 
+        //KLIKFUNCTIE VOOR ACTEURS
+        acteurbtn.actors = acteurblok;
+        acteurbtn.addEventListener("click", function () {
+            this.actors.classList.toggle('activeactor');
+            console.log('acteur klik');
+            acteurbtn.innerHTML = "Hide actors"
+        });
+        
         //ESCFUNCTIE VOOR EXIT VAN INFOBLOK
         function escExit(event) {
             var checkkey = event.keyCode;
             if (checkkey == 27) {
                 console.log('esc pressed');
+                //this.info.classList.remove('active');
             }
 
         }
         document.addEventListener('keydown', escExit);
 
-        
     }
 
 }

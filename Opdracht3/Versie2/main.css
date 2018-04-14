@@ -134,6 +134,23 @@ h4 {
 }
 
 
+.infoblok div {
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.infoblok div img {
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0.5rem;
+}
+
 /* de posities van de infoblokken yo */
 
 article:first-of-type {
@@ -259,54 +276,27 @@ h3 {
 }
 
 /* acteur div enzo */
-
-.infoblok div {
-    grid-row-start: 6;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    padding: 0 1rem;
+.actors {
+    display: block;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 
-.infoblok div img {
-    display: grid;
-    grid-column-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-    border: 2px solid black;
-    margin: 0.5rem;
-}
-.actorContainer {
-    background: green;
-}
-.actorblock {
-    width: 100%;
-    border: 1px solid orange;
-    display: grid;
-    grid-template-columns: 5rem auto;
-    grid-template-rows: 2.5rem 2.5rem;
+.activeactor {
+    opacity: 1;
 }
 
-.actorblock h5 {
+.actorsbtn {
     display: grid;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    padding-left: 0.5rem;
+    grid-row-start: 5;
+    background: #3d3d3d;
+    border: none;
+    margin: 0 1rem;
+    width: 8rem;
+    border-radius: 5px;
     font-size: 1rem;
-    margin: 0;
-    align-self: center;
+    color: white;
 }
-.actorblock h6 {
-    display: grid;
-    grid-column-start: 2;
-    grid-row-start: 2;
-    padding-left: 0.5rem;
-    font-size: 1rem;
-    align-self: center;
-    font-weight: 500;
-}
-.activeAct {
-    background: red;
+.actorsbtnactive {
+    opacity: 0;
 }
