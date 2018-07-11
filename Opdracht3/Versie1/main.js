@@ -2,7 +2,7 @@ console.log('test');
 var container = document.getElementById('container');
 console.log(container);
 
-var requestURL = 'http://dennistel.nl/movies';
+var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
 console.log(requestURL);
 
 var request = new XMLHttpRequest();
@@ -78,12 +78,16 @@ var filmtitle = function (jsonObj) {
         //acteurs
         var acteurs = jsonObj[i]['actors'];
         var acteurblok = document.createElement('div');
+        var acteurdiv = document.createElement('div');
         acteurblok.classList.add('actorContainer');
+        acteurdiv.classList.add('actorDiv');
+        acteurdiv.appendChild(acteurblok);
         /*var acteurbtn = document.createElement('button');
         acteurbtn.innerHTML = 'Show actors'
         acteurbtn.classList.add('actorsbtn');
         infoblok.appendChild(acteurbtn);*/
-        infoblok.appendChild(acteurblok);
+        
+        infoblok.appendChild(acteurdiv);
         for (var ib = 0; ib < acteurs.length; ib++) {
             var singleactor = document.createElement('div');
             singleactor.classList.add('actorblock');
@@ -102,12 +106,19 @@ var filmtitle = function (jsonObj) {
             singleactor.appendChild(acteurrole);
 
         }
-        //creeer buttons
+        //CREEEREN VAN BUTTON ACTEURS
         var nextbtn = document.createElement('button');
         nextbtn.innerHTML = '>';
-        acteurblok.appendChild(nextbtn);
+        acteurdiv.appendChild(nextbtn);
         
-        //SLIDER VOOR ACTORS 
+        nextbtn.acteurs = acteurblok;
+        nextbtn.addEventListener("click", function () {
+            this.acteurs.classList.toggle('activeactor');
+        });
+
+        
+        
+        /*//SLIDER VOOR ACTORS 
         var counter = 0;
         var alleactors = acteurs.length;
         var currentactor = alleactors[0];
@@ -124,7 +135,7 @@ var filmtitle = function (jsonObj) {
             currentactor.classList.add('activeAct');
             console.log(counter);
         }
-        nextbtn.addEventListener("click", nextactor);
+        nextbtn.addEventListener("click", nextactor); */
 
         //KLIKFUNCTIE VOOR ZIEN VAN INFO
         infobutton.info = infoblok;

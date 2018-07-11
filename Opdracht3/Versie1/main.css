@@ -281,12 +281,21 @@ h3 {
 .actorContainer {
     background: green;
 }
+.actorDiv {
+    background: orange;
+}
 .actorblock {
     width: 100%;
-    border: 1px solid orange;
+    display: none;
+    grid-template-columns: 5rem auto;
+    grid-template-rows: 2.5rem 2.5rem;
+}
+.activeactor {
+    opacity: 1;
     display: grid;
     grid-template-columns: 5rem auto;
     grid-template-rows: 2.5rem 2.5rem;
+    width: 100%;
 }
 
 .actorblock h5 {
@@ -307,6 +316,4 @@ h3 {
     align-self: center;
     font-weight: 500;
 }
-.activeAct {
-    background: red;
-}
+

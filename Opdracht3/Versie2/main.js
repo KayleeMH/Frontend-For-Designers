@@ -2,7 +2,7 @@ console.log('test');
 var container = document.getElementById('container');
 console.log(container);
 
-var requestURL = 'http://dennistel.nl/movies';
+var requestURL = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json';
 console.log(requestURL);
 
 var request = new XMLHttpRequest();
@@ -72,16 +72,20 @@ var filmtitle = function (jsonObj) {
         exitbutton.innerHTML = 'x';
         //director
         /*var director = document.createElement('h4');
-        director.textContent = jsonObj[i]['directors'][i]['name'];
+        director.classList.add('director');
+        director.textContent = "Director: " + jsonObj[i]['directors'][0]['name'];
         infoblok.appendChild(director);*/
 
-        //acteurs
+        //ACTEURS
         var acteurs = jsonObj[i]['actors'];
+        //div creeeren voor alle acteurs
         var acteurblok = document.createElement('div');
         acteurblok.classList.add('actors')
+        //button
         var acteurbtn = document.createElement('button');
         acteurbtn.innerHTML = 'Show actors'
         acteurbtn.classList.add('actorsbtn');
+        //button & blok moeten in het infoblok
         infoblok.appendChild(acteurbtn);
         infoblok.appendChild(acteurblok);
         for (var ib = 0; ib < acteurs.length; ib++) {
@@ -101,8 +105,9 @@ var filmtitle = function (jsonObj) {
         exitbutton.exit = infoblok;
         var exit = function () {
             this.exit.classList.remove('active');
+            acteurblok.classList.remove('activeactor');
         };
-        
+
         exitbutton.addEventListener("click", exit);
 
         //KLIKFUNCTIE VOOR ACTEURS
@@ -110,16 +115,27 @@ var filmtitle = function (jsonObj) {
         acteurbtn.addEventListener("click", function () {
             this.actors.classList.toggle('activeactor');
             console.log('acteur klik');
-            acteurbtn.innerHTML = "Hide actors"
         });
-        
+
+        acteurbtn.addEventListener("click", function () {
+            console.log(this.innerHTML);
+            var textbutton = this.innerHTML;
+            if (this.innerHTML = 'Show actors'){
+                this.innerHTML = 'Hide actors';
+            }
+            else {
+                this.innerHTML = 'Show actors';
+            };
+        });
+
         //ESCFUNCTIE VOOR EXIT VAN INFOBLOK
         function escExit(event) {
             var checkkey = event.keyCode;
             if (checkkey == 27) {
                 console.log('esc pressed');
+                document.getElementsByClassName("infoblok")[0].classList.remove('active');
                 //this.info.classList.remove('active');
-            }
+            };
 
         }
         document.addEventListener('keydown', escExit);
